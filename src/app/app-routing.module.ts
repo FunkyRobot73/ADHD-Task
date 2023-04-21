@@ -10,6 +10,54 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'to-do-list',
+    loadChildren: () => import('./pages/to-do-list/to-do-list.module').then( m => m.ToDoListPageModule)
+  },
+  {
+    path: 'add-task',
+    loadChildren: () => import('./pages/add-task/add-task.module').then( m => m.AddTaskPageModule)
+  },
+  {
+    path: 'goals',
+    loadChildren: () => import('./pages/goals/goals.module').then( m => m.GoalsPageModule)
+  },
+  {
+    path: 'add-daily-task',
+    loadChildren: () => import('./pages/add-daily-task/add-daily-task.module').then( m => m.AddDailyTaskPageModule)
+  },
+  {
+    path: 'add-monthly-task',
+    loadChildren: () => import('./pages/add-monthly-task/add-monthly-task.module').then( m => m.AddMonthlyTaskPageModule)
+  },
+  {
+    path: 'add-habit',
+    loadChildren: () => import('./pages/add-habit/add-habit.module').then( m => m.AddHabitPageModule)
+  },
+  {
+    path: 'add-goal',
+    loadChildren: () => import('./pages/add-goal/add-goal.module').then( m => m.AddGoalPageModule)
+  },
+  {
+    path: 'achievements',
+    loadChildren: () => import('./pages/achievements/achievements.module').then( m => m.AchievementsPageModule)
+  },
+  {
+    path: 'notes',
+    loadChildren: () => import('./pages/notes/notes.module').then( m => m.NotesPageModule)
+  },
+  {
+    path: 'add-note',
+    loadChildren: () => import('./pages/add-note/add-note.module').then( m => m.AddNotePageModule)
+  },
+  {
+    path: 'video-diary',
+    loadChildren: () => import('./pages/video-diary/video-diary.module').then( m => m.VideoDiaryPageModule)
+  },
+  {
+    path: 'images-diary',
+    loadChildren: () => import('./pages/images-diary/images-diary.module').then( m => m.ImagesDiaryPageModule)
   }
 ];
 
