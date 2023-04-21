@@ -1,0 +1,7 @@
+{
+  "name": "ADHD+",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
