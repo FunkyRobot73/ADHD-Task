@@ -7,6 +7,7 @@ const routes: Routes = [
     redirectTo: 'folder/Inbox',
     pathMatch: 'full'
   },
+  
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
@@ -23,10 +24,10 @@ const routes: Routes = [
     path: 'goals',
     loadChildren: () => import('./pages/goals/goals.module').then( m => m.GoalsPageModule)
   },
-  {
-    path: 'add-daily-task',
-    loadChildren: () => import('./pages/add-daily-task/add-daily-task.module').then( m => m.AddDailyTaskPageModule)
-  },
+  // {
+  //   path: 'add-daily-task',
+  //   loadChildren: () => import('./pages/add-daily-task/add-daily-task.module').then( m => m.AddDailyTaskPageModule)
+  // },
   {
     path: 'add-monthly-task',
     loadChildren: () => import('./pages/add-monthly-task/add-monthly-task.module').then( m => m.AddMonthlyTaskPageModule)
