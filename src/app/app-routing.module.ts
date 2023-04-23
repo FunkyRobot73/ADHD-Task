@@ -4,7 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'folder/Inbox', //Previously on...
+    // redirectTo: 'to-do-list',
     pathMatch: 'full'
   },
   
@@ -59,6 +60,10 @@ const routes: Routes = [
   {
     path: 'images-diary',
     loadChildren: () => import('./pages/images-diary/images-diary.module').then( m => m.ImagesDiaryPageModule)
+  },
+  {
+    path: 'todo',
+    loadChildren: () => import('./pages/todo/todo.module').then( m => m.TodoPageModule)
   }
 ];
 
