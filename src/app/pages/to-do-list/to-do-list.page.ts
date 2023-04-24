@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Itask } from 'src/app/interfaces/itask';
 import { TasksService } from 'src/app/services/tasks.service';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-to-do-list',
@@ -9,11 +11,13 @@ import { TasksService } from 'src/app/services/tasks.service';
 })
 export class ToDoListPage implements OnInit {
   tasks:any = [];
- 
+  baseURLimages = environment.baseURL;
+  // image:any = "";
 
   constructor(private tasksService: TasksService ){
     tasksService.getTasks().subscribe((results) => {
       this.tasks = results;
+      // this.image = results.task_image;
     });
   }
 

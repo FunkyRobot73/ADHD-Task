@@ -10,23 +10,31 @@
       <ion-title size="large">ADHD+ To Do List 1.1</ion-title>
     </ion-toolbar>
   </ion-header>
-  <h1><ion-datetime-button datetime="datetime"></ion-datetime-button></h1>
-  
 
-<ion-modal [keepContentsMounted]="true">
-  <ng-template>
-    <ion-datetime id="datetime"></ion-datetime>
-  </ng-template>
-</ion-modal>
+  <ion-datetime-button disabled="true" datetime="datetime"></ion-datetime-button>
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime"></ion-datetime>
+    </ng-template>
+  </ion-modal>
 
 
-<ion-list>
-  <ion-item button *ngFor="let item of tasks">
-    <ion-label>{{ item.task_name }}
-    <p>{{item.date_of_start | date}}</p>
-  </ion-label>
-  <ion-badge slot="end">{{item.status_of_task}}</ion-badge>
-  </ion-item>
-</ion-list>
+  <ion-list>
+    <ion-item button *ngFor="let item of tasks">
+
+      <ion-avatar slot="start">
+        <img [src]=" baseURLimages + item.task_image" />
+      </ion-avatar>
+
+      <ion-label>{{ item.task_name }}
+        <p>{{item.date_of_start | date}}</p>
+      </ion-label>
+      <ion-checkbox slot="end" labelPlacement="start">{{item.status_of_task}}</ion-checkbox>
+      
+
+    </ion-item>
+  </ion-list>
+
+  <ion-button href="add-task" fill="outline">Add Task</ion-button>
+
 </ion-content>
-

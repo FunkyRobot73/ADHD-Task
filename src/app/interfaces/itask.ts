@@ -1,3 +1,5 @@
+import { Url } from "url";
+
 export interface Itask {
 
     id:number;
@@ -6,6 +8,7 @@ export interface Itask {
     date_of_start:Date;
     date_of_end:Date;
     status_of_task:string;
+    task_image:string;
     
 
 }

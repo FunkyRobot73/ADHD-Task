@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,6 +13,7 @@ import { AddTaskPage } from './add-task.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
     AddTaskPageRoutingModule
   ],
   declarations: [AddTaskPage]
