@@ -1,3 +1,4 @@
+// import { NgModule } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -29,18 +30,9 @@ const routes: Routes = [
   //   path: 'add-daily-task',
   //   loadChildren: () => import('./pages/add-daily-task/add-daily-task.module').then( m => m.AddDailyTaskPageModule)
   // },
-  {
-    path: 'add-monthly-task',
-    loadChildren: () => import('./pages/add-monthly-task/add-monthly-task.module').then( m => m.AddMonthlyTaskPageModule)
-  },
-  {
-    path: 'add-habit',
-    loadChildren: () => import('./pages/add-habit/add-habit.module').then( m => m.AddHabitPageModule)
-  },
-  {
-    path: 'add-goal',
-    loadChildren: () => import('./pages/add-goal/add-goal.module').then( m => m.AddGoalPageModule)
-  },
+  
+  
+  
   {
     path: 'achievements',
     loadChildren: () => import('./pages/achievements/achievements.module').then( m => m.AchievementsPageModule)

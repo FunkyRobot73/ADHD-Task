@@ -5,32 +5,45 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
+
   <form [formGroup]="todoForm">
-  <ion-list>
-    <ion-item>
-      <ion-input label="Task Name:" placeholder="Task to Complete..." formControlName="task_name"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-input label="Description" labelPlacement="floating" placeholder="Enter text" formControlName="task_desc"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-input label="Start Date" labelPlacement="floating" placeholder="Enter text" formControlName="date_of_start"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-input label="End Date" labelPlacement="floating" placeholder="Enter text" formControlName="date_of_end"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-input label="Status" labelPlacement="floating" placeholder="Enter text" formControlName="status_of_task"></ion-input>
-    </ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-input label="Task Name:" labelPlacement="floating"
+          placeholder="Stop reading on the toilet..."
+          formControlName="task_name"></ion-input>
+      </ion-item>
 
-  </ion-list>
+      <!-- <ion-item>
+        <ion-select label="Type:">
+          <ion-select-option *ngFor="let t of tasks" [value]="t.id">{{ t.type }}
 
-  <ion-button fill="outline" (click)="onSubmit()">To Do List</ion-button>
+          </ion-select-option>
+        </ion-select>
+      </ion-item> -->
 
+      <ion-item>
+        <ion-input label="Description:" labelPlacement="floating"
+          formControlName="task_desc"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Start Date:" labelPlacement="floating"
+          formControlName="date_of_start"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="End Date:" labelPlacement="floating"
+          formControlName="date_of_end"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Status:" labelPlacement="floating" placeholder="Enter
+          text" formControlName="status_of_task"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button fill="outline" (click)="onSubmit()">To Do List</ion-button>
   </form>
 </ion-content>

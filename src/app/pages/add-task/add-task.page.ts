@@ -1,3 +1,4 @@
+// import { Component, OnInit } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -9,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 import { TasksService } from 'src/app/services/tasks.service';
 import { NgForm } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
+import { Itask } from 'src/app/interfaces/itask';
+import { ToDoListPage } from '../to-do-list/to-do-list.page';
 
 @Component({
   selector: 'app-add-task',
@@ -20,8 +23,15 @@ import { NgFor, NgIf } from '@angular/common';
 export class AddTaskPage implements OnInit {
 
   todoForm:any;
+  types!:any;
+  isEdit:boolean = false;
+  editTaskId:number = 0;
 
-  constructor(private formBuilder:FormBuilder, private route:ActivatedRoute) {
+  constructor(
+    private formBuilder:FormBuilder, 
+    private route:ActivatedRoute,
+    private tasksService:tasksService,
+    ) {
 
     this.todoForm = formBuilder.group({
       task_name: ["", [Validators.required, Validators.minLength(3)]],
@@ -29,17 +39,33 @@ export class AddTaskPage implements OnInit {
       date_of_start: ["", [Validators.required]],
       date_of_end: ["", [Validators.required]],
       status_of_task: ["", [Validators.required]],
-
+      type: ["", [Validators.required]],
 
     });
 
    }
+   
+   ngOnInit() {
+   }
+   
+   onSubmit() {
+    let taskData =  this.todoForm.value;      
 
-  ngOnInit() {
+    if(this.isEdit) {
+      
+        this.tasksService.updateStudent(taskData, this.editTaskId).subscribe((result) => {
+          console.log(result);
+          
+          alert("Student was Updated successfully!")
+        });
+      } else {
+
+    this.tasksService.createStudent(taskData).subscribe((result) => {
+      console.log(result);
+      this.todoForm.reset();  //clear form values
+      alert("Student was created successfully!")
+    });
   }
-
-  onSubmit() {
-
-  }
-
+}
+  
 }
