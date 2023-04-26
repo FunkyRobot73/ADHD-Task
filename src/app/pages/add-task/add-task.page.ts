@@ -23,15 +23,8 @@ import { ToDoListPage } from '../to-do-list/to-do-list.page';
 export class AddTaskPage implements OnInit {
 
   todoForm:any;
-  types!:any;
-  isEdit:boolean = false;
-  editTaskId:number = 0;
 
-  constructor(
-    private formBuilder:FormBuilder, 
-    private route:ActivatedRoute,
-    private tasksService:tasksService,
-    ) {
+  constructor(private formBuilder:FormBuilder, private route:ActivatedRoute) {
 
     this.todoForm = formBuilder.group({
       task_name: ["", [Validators.required, Validators.minLength(3)]],
@@ -44,28 +37,12 @@ export class AddTaskPage implements OnInit {
     });
 
    }
-   
-   ngOnInit() {
-   }
-   
-   onSubmit() {
-    let taskData =  this.todoForm.value;      
 
-    if(this.isEdit) {
-      
-        this.tasksService.updateStudent(taskData, this.editTaskId).subscribe((result) => {
-          console.log(result);
-          
-          alert("Student was Updated successfully!")
-        });
-      } else {
-
-    this.tasksService.createStudent(taskData).subscribe((result) => {
-      console.log(result);
-      this.todoForm.reset();  //clear form values
-      alert("Student was created successfully!")
-    });
+  ngOnInit() {
   }
-}
-  
+
+  onSubmit() {
+
+  }
+
 }

@@ -1,6 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>add-task</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Details Page
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -46,4 +51,6 @@
 
     <ion-button fill="outline" (click)="onSubmit()">To Do List</ion-button>
   </form>
+
+  <ion-button fill="outline" routerLink="/to-do-list"><ion-icon name="home-outline"></ion-icon></ion-button>
 </ion-content>
