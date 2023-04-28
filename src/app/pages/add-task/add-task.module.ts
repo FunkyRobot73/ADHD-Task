@@ -14,7 +14,7 @@ import { AddTaskPage } from './add-task.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    AddTaskPageRoutingModule
+    AddTaskPageRoutingModule,
   ],
   declarations: [AddTaskPage]
 })

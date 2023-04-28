@@ -28,6 +28,21 @@
       </ion-item> -->
 
       <ion-item>
+        <ion-select
+          aria-label="Type"
+          interface="popover"
+          placeholder="Select type"
+          formControlName="type"
+        >
+          <ion-select-option value="Task">Task</ion-select-option>
+          <ion-select-option value="Goal">Goal</ion-select-option>
+          <ion-select-option value="Habit">Habit</ion-select-option>
+          <ion-select-option value="Monthly">Monthly</ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+
+      <ion-item>
         <ion-input label="Description:" labelPlacement="floating"
           formControlName="task_desc"></ion-input>
       </ion-item>
@@ -43,8 +58,17 @@
       </ion-item>
 
       <ion-item>
-        <ion-input label="Status:" labelPlacement="floating" placeholder="Enter
-          text" formControlName="status_of_task"></ion-input>
+        <ion-select
+          aria-label="Status"
+          interface="popover"
+          placeholder="Select Status"
+          formControlName="status_of_task"
+        >
+          <ion-select-option value="NotStarted">Not Started</ion-select-option>
+          <ion-select-option value="Started">Started</ion-select-option>
+          <ion-select-option value="Completed">Completed</ion-select-option>
+          
+        </ion-select>
       </ion-item>
 
     </ion-list>

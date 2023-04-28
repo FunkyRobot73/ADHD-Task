@@ -9,16 +9,16 @@ import { Observable } from 'rxjs';
 })
 export class TasksService {
 
-  url = "http://localhost:3000/tasks";
+  url = "http://localhost:3003/tasks";
   
 
   constructor(private http:HttpClient) { }
   
-  getTasks(): Observable<any> {
+  getTasks() {
     return this.http.get<Itask[]>(this.url)
   }
 
-  getTaskDetails(id: string) {
+  getTaskDetails(id: number) {
     return this.http.get<Itask[]>(this.url)
   }
   
