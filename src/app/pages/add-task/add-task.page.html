@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>
-      Add Task
+      Add Task, Goal or Habit!
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -31,13 +31,14 @@
         <ion-select
           aria-label="Type"
           interface="popover"
-          placeholder="Select type"
+          placeholder="Select type:"
           formControlName="type"
         >
-          <ion-select-option value="Task">Task</ion-select-option>
-          <ion-select-option value="Goal">Goal</ion-select-option>
-          <ion-select-option value="Habit">Habit</ion-select-option>
-          <ion-select-option value="Monthly">Monthly</ion-select-option>
+          <ion-select-option value="Task">Task (One-Time)</ion-select-option>
+          <ion-select-option value="Weekly">Task (Reoccurring Weekly)</ion-select-option>
+          <ion-select-option value="Monthly">Task (Reoccurring Monthly)</ion-select-option>
+          <ion-select-option value="Habit">Habit (Daily)</ion-select-option>
+          <ion-select-option value="Goal">Goal (Long-term)</ion-select-option>
         </ion-select>
       </ion-item>
     
@@ -85,9 +86,9 @@
 
       <ion-item>
         <ion-select
-          aria-label="Status"
+          aria-label="Status:"
           interface="popover"
-          placeholder="Select Status"
+          placeholder="Select Status:"
           formControlName="status_of_task"
         >
           <ion-select-option value="NotStarted">Not Started</ion-select-option>
@@ -97,9 +98,24 @@
         </ion-select>
       </ion-item>
 
-      <ion-item>
+      <!-- <ion-item>
         <ion-input label="Image:" labelPlacement="floating"
           formControlName="task_image"></ion-input>
+      </ion-item> -->
+
+      <ion-item>
+        <ion-select
+          aria-label="Type"
+          interface="popover"
+          placeholder="Select Image:"
+          formControlName="task_image"
+        >
+          <ion-select-option value="task.png">Task</ion-select-option>
+          <ion-select-option value="goal.png">Goal</ion-select-option>
+          <ion-select-option value="habit.png">Habit</ion-select-option>
+          <ion-select-option value="weekly.png">Weekly Task</ion-select-option>
+          <ion-select-option value="monthly.png">Monthly Task</ion-select-option>
+        </ion-select>
       </ion-item>
 
     </ion-list>
