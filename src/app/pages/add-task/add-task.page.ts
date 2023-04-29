@@ -31,11 +31,14 @@ export class AddTaskPage implements OnInit {
     private route:ActivatedRoute,
     private tasksService: TasksService) {
 
+    const date = new Date();
+    date.setHours(date.getHours() - date.getTimezoneOffset() / 60);
+
     this.todoForm = formBuilder.group({
       task_name: ["", [Validators.required, Validators.minLength(3)]],
       task_desc: ["", [Validators.required]],
-      date_of_start: ["", [Validators.required]],
-      date_of_end: ["", [Validators.required]],
+      date_of_start: [new Date(date).toISOString(), [Validators.required]],
+      date_of_end: [new Date(date).toISOString(), [Validators.required]],
       status_of_task: ["", [Validators.required]],
       type: ["", [Validators.required]],
       task_image: ["", [Validators.required]],
