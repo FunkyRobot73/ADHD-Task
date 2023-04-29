@@ -1,8 +1,8 @@
-// import { Injectable } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { Itask } from '../interfaces/itask';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +20,10 @@ export class TasksService {
 
   getTaskDetails(id: number) {
     return this.http.get<Itask[]>(this.url)
+  }
+
+  createTask(task_data: any) {
+    return this.http.post<Itask>(this.url, task_data);
   }
   
 };

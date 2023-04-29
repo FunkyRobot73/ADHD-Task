@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>
-      Details Page
+      Add Task
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -78,7 +78,11 @@
 
     </ion-list>
 
-    <ion-button fill="outline" (click)="onSubmit()">To Do List</ion-button>
+    <ion-button fill="outline" (click)="onSubmit()" 
+    id="submit-button"
+
+    [disabled]="todoForm.invalid">Add Task</ion-button>
+
   </form>
 
   <ion-button fill="outline" routerLink="/to-do-list"><ion-icon name="home-outline"></ion-icon></ion-button>

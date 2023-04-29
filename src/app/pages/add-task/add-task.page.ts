@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Validators, FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 // import { Idepartment } from 'src/app/interfaces/idepartment';
 // import { DepartmentsService } from 'src/app/services/departments.service';
 // import { StudentsService } from 'src/app/services/students.service';
@@ -23,8 +23,13 @@ import { ToDoListPage } from '../to-do-list/to-do-list.page';
 export class AddTaskPage implements OnInit {
 
   todoForm:any;
+  // tasksService: any;
 
-  constructor(private formBuilder:FormBuilder, private route:ActivatedRoute) {
+  constructor(
+    private formBuilder:FormBuilder,
+    private router: Router,
+    private route:ActivatedRoute,
+    private tasksService: TasksService) {
 
     this.todoForm = formBuilder.group({
       task_name: ["", [Validators.required, Validators.minLength(3)]],
@@ -43,7 +48,15 @@ export class AddTaskPage implements OnInit {
   }
 
   onSubmit() {
+    const task_data = this.todoForm.value;
 
+    this.tasksService
+      .createTask(task_data)
+      .subscribe((result) => console.log(result));
+
+    this.todoForm.reset();
+
+    this.router.navigateByUrl('add-task');
   }
 
 }
