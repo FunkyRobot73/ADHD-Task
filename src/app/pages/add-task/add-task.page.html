@@ -48,9 +48,22 @@
       </ion-item>
 
       <ion-item>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="datetime"
+              formControlName="date_of_start"
+              hourCycle="h12"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+
+      <!-- <ion-item>
         <ion-input label="Start Date:" labelPlacement="floating"
           formControlName="date_of_start"></ion-input>
-      </ion-item>
+      </ion-item> -->
 
       <ion-item>
         <ion-input label="End Date:" labelPlacement="floating"
