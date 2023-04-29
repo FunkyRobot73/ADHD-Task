@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -16,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule,
     ToDoListPageRoutingModule,
     NgFor,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   declarations: [ToDoListPage]
 })

@@ -33,6 +33,7 @@ export class AddTaskPage implements OnInit {
       date_of_end: ["", [Validators.required]],
       status_of_task: ["", [Validators.required]],
       type: ["", [Validators.required]],
+      task_image: ["", [Validators.required]],
 
     });
 

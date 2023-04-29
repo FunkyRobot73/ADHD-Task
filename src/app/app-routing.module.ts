@@ -5,15 +5,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox', //Previously on...
+    redirectTo: 'to-do-list', //Previously on...
     // redirectTo: 'to-do-list',
     pathMatch: 'full'
   },
   
-  {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
+  
   {
     path: 'to-do-list',
     loadChildren: () => import('./pages/to-do-list/to-do-list.module').then( m => m.ToDoListPageModule)
