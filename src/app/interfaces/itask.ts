@@ -6,7 +6,7 @@ export interface Itask {
     date_of_start: Date;
     date_of_end: Date;
     status_of_task: string;
+    task_type: string;
     task_image: string;
-    type: string;
 
 }

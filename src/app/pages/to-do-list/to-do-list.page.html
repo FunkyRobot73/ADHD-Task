@@ -31,8 +31,10 @@
 
       <ion-label>{{ item.task_name }}
         <p>{{item.date_of_start | date}}</p>
+        <p>{{item.status_of_task}}</p>
       </ion-label>
-      <ion-checkbox slot="end" labelPlacement="start">{{item.status_of_task}}</ion-checkbox>
+      <ion-button  slot="end" labelPlacement="start" fill="outline">{{item.task_type}}</ion-button>
+      <!-- <ion-checkbox slot="end" labelPlacement="start">{{item.task_type}}</ion-checkbox> -->
       
 
     </ion-item>
