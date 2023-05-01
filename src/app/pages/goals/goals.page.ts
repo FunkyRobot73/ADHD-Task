@@ -26,6 +26,7 @@ export class GoalsPage implements OnInit {
     this.tasksService.getTasks().subscribe((res) => {
       this.goals = [...this.goals];
       console.log(res);
+      console.log(5 + 5);
     });
   }
 

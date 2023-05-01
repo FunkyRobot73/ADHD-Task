@@ -40,8 +40,8 @@ export class AddTaskPage implements OnInit {
       date_of_start: [new Date(date).toISOString(), [Validators.required]],
       date_of_end: [new Date(date).toISOString(), [Validators.required]],
       status_of_task: ["", [Validators.required]],
-      type: ["", [Validators.required]],
       task_image: ["", [Validators.required]],
+      task_type: ["", [Validators.required]],
 
     });
 
@@ -60,6 +60,8 @@ export class AddTaskPage implements OnInit {
     this.todoForm.reset();
 
     this.router.navigateByUrl('add-task');
+    
   }
+  
 
 }

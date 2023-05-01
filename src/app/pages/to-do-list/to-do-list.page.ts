@@ -14,12 +14,15 @@ export class ToDoListPage implements OnInit {
   tasks:any = [];
   baseURLimages = environment.baseURL;
   // image:any = "";
+  
 
   constructor(private tasksService: TasksService ){
     tasksService.getTasks().subscribe((results) => {
       this.tasks = results;
       // this.image = results.task_image;
     });
+
+    
   }
 
   ngOnInit() {
@@ -30,7 +33,10 @@ export class ToDoListPage implements OnInit {
     this.tasksService.getTasks().subscribe((res) => {
       this.tasks = [...this.tasks];
       console.log(res);
+      
     });
   }
+
+  
 
 };
